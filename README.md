@@ -13,7 +13,7 @@ Un serveur local (Dans notre cas, MAMP)
 # Cloner le dépôt
 
 GitHub : git clone https://github.com/1baussant1/DM2_web
-GitLab : git clone TODO Add
+GitLab : git clone https://gitlab.com/baussant/DM2_web2/-/blob/main/README.md
 
 # Lancer un serveur PHP 
 
