@@ -21,7 +21,7 @@ Lancer Mamp en local et importer le projet
 
 ## Structure du projet
 
-'''txt
+```txt
 /DM2_web
 │── index.php         # Point d'entrée du projet
 │── assets/
@@ -31,7 +31,7 @@ Lancer Mamp en local et importer le projet
 │   ├── carte.php     # Composant .php pour le formulaire de recherche + carte
 │── flight/
 │── README.md         # Documentation du projet
-'''
+```
 
 ## Utilisation
 
