@@ -21,7 +21,8 @@ Lancer Mamp en local et importer le projet
 
 ## Structure du projet
 
-/votre-repo
+'''txt
+/DM2_web
 │── index.php         # Point d'entrée du projet
 │── assets/
 │   ├── carte.css     # Feuille de style pour la mise en forme
@@ -30,6 +31,7 @@ Lancer Mamp en local et importer le projet
 │   ├── carte.php     # Composant .php pour le formulaire de recherche + carte
 │── flight/
 │── README.md         # Documentation du projet
+'''
 
 ## Utilisation
 
