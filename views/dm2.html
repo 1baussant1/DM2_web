@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recherche de Villes</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/carte.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        label, select, input {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <!-- Formulaire de recherche -->
+    <form @submit.prevent="fetchVilles">
+        <label for="critere">Choisir le critère de recherche :</label>
+        <select v-model="critere" id="critere">
+            <option value="commence">Commence par</option>
+            <option value="finit">Se termine par</option>
+            <option value="contient">Contient</option>
+        </select>
+
+        <br>
+
+        <label for="recherche">Entrez un texte de recherche :</label>
+        <input type="text" v-model="recherche" id="recherche" placeholder="Ex: K, ac, plou" required />
+
+        <br>
+
+        <button type="submit">Rechercher</button>
+    </form>
+
+    <!-- Affichage des résultats -->
+    <div v-if="villes.length > 0">
+        <h3>Villes trouvées :</h3>
+        <ul>
+            <li v-for="ville in villes" :key="ville.id">{{ ville.nom }}</li>
+        </ul>
+    </div>
+
+    <div v-else>
+        <p>Aucune ville trouvée.</p>
+    </div>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            critere: 'commence',  // Valeur par défaut
+            recherche: '',        // Le texte de recherche
+            villes: []            // Liste des villes retournées
+        },
+        methods: {
+            // Cette fonction appelle l'API pour récupérer les villes
+            fetchVilles: function() {
+                // Créer l'URL de l'API en fonction des valeurs du formulaire
+                const url = `/api/villes?critere=${this.critere}&recherche=${this.recherche}`;
+                
+                // Appel à l'API
+                fetch(url)
+                    .then(response => response.json())
+                    .then(data => {
+                        // Mettre à jour les villes dans la vue
+                        this.villes = data;
+                    })
+                    .catch(error => {
+                        console.error('Erreur lors de la récupération des données:', error);
+                    });
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

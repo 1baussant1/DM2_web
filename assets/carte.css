@@ -1,0 +1,73 @@
+
+#entete {
+    background-color: #5E548E;
+    grid-row: 1;
+    padding: 20px;
+    max-width: 1400px;
+    z-index: 10; 
+    position: relative;
+}
+h2{
+    color : #D6BEDA;
+    -webkit-text-stroke: 0.2px #D6BEDA;
+    text-align: center;
+    position: relative ;
+    margin-top: 0px;
+    
+}
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 100px 1fr;
+}
+form {
+    margin: 10px;
+}
+input,
+button {
+    font-size: 1.3em;
+    background-color: #D6BEDA;
+    margin-left : 10px;
+    color: #5E548E;
+    border-color: aliceblue;
+}
+#villes {
+    position: absolute;
+    top: 104px;
+    z-index: 5000;
+    padding: 0;
+    margin-top: -6px;
+    background: #D6BEDA;
+    color: #5E548E;
+    margin-left: 18px;
+    width: 266px;
+}
+#villes li {
+    padding: 10px;
+    list-style-type: none;
+}
+#villes li:hover {
+    background: white;
+}
+#villes.transparent {
+    pointer-events: none;
+    background: transparent;
+    border: none;
+}
+
+.carteTest {
+    position: sticky;
+}
+
+
+.selectedMethod {
+    background-color: #5E548E;
+    color: #D6BEDA;
+}
+
+.no-result {
+    color: red;
+    font-weight: bold;
+    margin-left: 30px;
+  }
